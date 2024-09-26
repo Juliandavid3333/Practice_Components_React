@@ -12,25 +12,23 @@ export const SecondComponent = () => {
         "Animales Fantásticos y dónde encontrarlos",
         "Otro libro"
     ];
-    const listBooks = [];
-    books.forEach((book, index) => {
-        listBooks.push(<li key={index}>{ book }</li>)
-    })
-  return (
-    <>
-    <div>
-    <ul>
-        {
-            books.map((book, index) => {
-                return <li key={{index}}> {book}</li>
-            })
-        }
-    </ul>
-    <ul>
-          { listBooks }
-
-    </ul>
-    </div>
-    </>
-  )
-}
+    return (
+        <>
+          <h1>SecondComponent</h1>
+          <div>
+            <ul>
+              {books.length >= 1 ?
+                (
+                    books.map((book, index) => {
+                      return <li key={ index }> { book } </li>
+                    })
+                ) :
+                (
+                  <p>No existen libros</p>
+                )
+              }
+            </ul>
+          </div>
+        </>
+      )
+    }

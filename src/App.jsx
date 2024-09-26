@@ -1,18 +1,26 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import { FirstComponent } from './components/FirstComponent.jsx'
-import { SecondComponent } from './components/SecondComponent.jsx'
+import { useState } from 'react';
+import './App.css';
+import { Child } from './components/Child';
+import { FourthComponent } from './components/FourthComponent';
+
 function App() {
 
-  return (
-    <>
-    <FirstComponent/>
-    <SecondComponent/>
-    </>
+  const [name, setName] = useState("Wendy Katherinne Gomez Villa");
 
+  return (
+    <div className="App">
+      <header className="App-header">
+        <hr className='white-hr'/>
+        <FourthComponent />
+        <hr className='white-hr'/>
+        <Child
+          name={name}
+          setName={setName}
+        />
+        <hr className='white-hr'/>
+      </header>
+    </div>
   )
-}
+};
 
 export default App
